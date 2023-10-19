@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Edit Product</h1>
+        <a> </a>
+        <a href="/">Back to List</a>
+    </header>
+
+    <!--<form action="/updateProduct/{{ item.id }}" method="post">
+
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{ item.name }}" required>
+        <label for="description">Description</label>
+        <textarea name="description" required>{{ item.description }}</textarea>
+        <label for="price">Price</label>
+        <input type="text" name="price" value="{{ item.price }}" required>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+<script src="./js/add.js"></script>
+</html> -->
+<form id="editForm" method="post">
+        <input type="hidden" name="product_id" value="{{ item.id }}">
+        <label for="name">Name</label>
+        <input type="text" name="name" value="{{ item.name }}" required>
+        <label for="description">Description</label>
+        <textarea name="description" required>{{ item.description }}</textarea>
+        <label for="price">Price</label>
+        <input type="text" name="price" value="{{ item.price }}" required>
+        <button type="submit">Save Changes</button>
+    </form>
+</body>
+<script src="./js/add.js"></script>
+</html>

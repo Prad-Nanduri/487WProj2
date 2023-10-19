@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Items</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Prad's Online Store</h1>
+            <h2>Product Catalog</h2>
+            <a href="add.html" class="add-button">Add New Product</a>
+            <div class="search-bar">
+                <form action="/searchProduct" method="post">
+                    <input type="text" name="keyword" placeholder="Search by keyword" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <div class="item-list">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th><a href="/browse/sort/id" data-sort="id">Product ID ▲</a></th>
+                    <th><a href="/browse/sort/name" data-sort="name">Name ▲</a></th>
+                    <th><a href="/browse/sort/price">Price</a></th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.description }}</td>
+                        <td>{{ item.price }}</td>
+                        <td>
+                            <a href="/updateProduct/{{ item.id }}">Edit</a>
+                            <a href="/deleteProduct/{{ item.id }}">Delete</a>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+<script src="./js/search.js"></script>
+<script src="./js/sort.js"></script>
+<script src="./js/add.js"></script>
+<script src="./js/api.js"></script>
+</body>
+</html>
